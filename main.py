@@ -1,5 +1,4 @@
 import os
-import time
 import requests
 import feedparser
 from dotenv import load_dotenv
@@ -63,7 +62,6 @@ def send_discord_embed(source_name, title, link):
 
 if __name__ == "__main__":
     print("Starting AI News Event-Driven Gateway...")
-    # Event Polling Loop (Runs continuously every 3 minutes)
-    while True:
-        fetch_and_route_news()
-        time.sleep(180)
+    # Single-run execution for cloud automation (GitHub Actions)
+    fetch_and_route_news()
+    print("News ingestion run complete.")
